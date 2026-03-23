@@ -1,0 +1,14 @@
+command /fly:
+	permission: fly.use
+	trigger:
+		if player is flying: 
+			set player's flight mode to false
+			send "<#FF0000>Flightmode disabled!" 
+			stop
+            
+        
+		else:
+			set player's flight mode to true 
+			make player fly
+			send "<#18FF00>Flightmode enabled!"
+			stop
