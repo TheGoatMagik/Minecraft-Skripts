@@ -6,7 +6,7 @@ command /tc [<text>]:
 			set {_msg} to arg-1
 			loop all players:
 				if loop-player has permission "staff.chat":
-					send "&8[<#F3CF00>TeamChat&8] <#F6E689>%{_p}%: <#FFFFFF>%{_msg}%" to loop-player
+					send "&8[<#F3CF00>TeamChat&8] <#E3D66C>%{_p}%: <#FFFFFF>%{_msg}%" to loop-player
 					stop
 
 		else:
@@ -32,4 +32,4 @@ on chat:
 			cancel event
 			loop all players:
 				if loop-player has permission "staff.chat":
-					send "&8[<#F3CF00>TeamChat&8] <#F6E689>%{_p}%: <#FFFFFF>%{_msg}%" to loop-player
+					send "&8[<#F3CF00>TeamChat&8] <#E3D66C>%{_p}%: <#FFFFFF>%{_msg}%" to loop-player
