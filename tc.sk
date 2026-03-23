@@ -1,0 +1,30 @@
+command /tc [<text>]:
+    permission: staff.chat
+	trigger:
+		if arg-1 is set:
+        	set {_p} to player
+			set {_msg} to arg-1
+			loop all players:
+				if loop-player has permission "staff.chat":
+					send "&8[<#F3CF00>TeamChat&8] <#F6E689>%{_p}%: <#FFFFFF>%{_msg}%" to loop-player
+
+		else:
+			if {tc.%player%} is true:
+				set {tc.%player%} to false
+				send "&8[<#F3CF00>TeamChat&8] <#FF0000>Teamchat-toggle disabled!"
+			if {tc.%player%} is false:
+				set {tc.%player%} to true
+				send "&8[<#F3CF00>TeamChat&8] <#18FF00>Teamchat-toggle enabled!"
+			if {t.%player%} is not set:
+				set {tc.%player%} to true
+				send "&8[<#F3CF00>TeamChat&8] <#18FF00>Teamchat-toggle enabled!"
+
+on chat:
+	if player has permission "staff.chat":
+		if {tc.%player%} is true:
+			set {_p} to player
+			set {_msg} to message
+			cancel event
+			loop all players:
+				if loop-player has permission "staff.chat":
+					send "&8[<#F3CF00>TeamChat&8] <#F6E689>%{_p}%: <#FFFFFF>%{_msg}%" to loop-player
