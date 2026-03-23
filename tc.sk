@@ -23,6 +23,7 @@ command /tc [<text>]:
 				send "&8[<#F3CF00>TeamChat&8] <#18FF00>Teamchat-toggle enabled!"
 				stop
 
+#======= This part lets you toggle the Teamchat =======
 on chat:
 	if player has permission "staff.chat":
 		if {tc.%player%} is true:
