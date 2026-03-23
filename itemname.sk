@@ -1,3 +1,7 @@
+#Important!
+#Before using this, please make sure you use Names with the Colorcode-Format "<#000000>"
+#Other Formats wont work, a great Website for Hex-Gradients with different Formats is "https://www.birdflop.com/resources/rgb/".
+
 command /itemname <text>:
     permission: admin.permpack
     trigger:
