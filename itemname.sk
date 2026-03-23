@@ -1,0 +1,24 @@
+command /itemname <text>:
+    permission: admin.permpack
+    trigger:
+        if player's tool is air:
+            send "<#FF0000>You need to hold an Item!" to player
+            stop
+
+        set {_name} to arg-1
+        set {_name} to colored {_name}
+        set name of player's tool to {_name}
+
+        send "<#18FF00>Itemname changed succesfully!" to player
+
+command /itemlore <integer> <text>:
+    permission: admin.permpack
+    trigger:
+        if player's tool is air:
+            send "<#FF0000>You need to hold an Item!" to player
+            stop
+
+        set {_lore} to colored arg-2
+        set line arg-1 of lore of player's tool to {_lore}
+
+        send "<#18FF00>Itemlore changed succesfully!"
