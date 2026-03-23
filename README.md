@@ -11,3 +11,6 @@ You can change the player permissions for every file aswell as some of the messa
 These scripts may not have the best quality, but I gave my best and I think they are still useful.
 
 Please read all lines that begin with a "#" before using these scripts.
+You can replace all Hex Colorcodes with your own.
+
+If you have more Ideas, let me know!
