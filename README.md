@@ -13,4 +13,6 @@ These scripts may not have the best quality, but I gave my best and I think they
 Please read all lines that begin with a "#" before using these scripts.
 You can replace all Hex Colorcodes with your own.
 
-If you have more Ideas, let me know!
+I'm still working on this, but if you have more Ideas, let me know!
+
+If you use these for real Minecraft-Servers, It would be very nice by you to give credits, but that's up to you.
