@@ -9,6 +9,7 @@ Tested all skripts with:
 
 You can change the player permissions for every file aswell as some of the messages.
 These scripts may not have the best quality, but I gave my best and I think they are still useful.
+If a script is not working for you, please check your plugins and their versions. If you are sure, that the script is the problem, please tell me. If you find Bugs, tell me and i'll try fixing them.
 
 Please read all lines that begin with a "#" before using these scripts.
 You can replace all Hex Colorcodes with your own.
