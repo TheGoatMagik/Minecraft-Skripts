@@ -1,14 +1,17 @@
 command /fly:
 	permission: fly.use
 	trigger:
-		if player is flying: 
-			set player's flight mode to false
-			send "<#FF0000>Flightmode disabled!" 
-			stop
+		if player's gamemode is survival or adventure:
+			if {fly.%player%} is true: 
+				set player's flight mode to false
+				set {fly.%player%} to false
+				send "<#FF0000>Flightmode disabled!" 
+				stop
             
         
-		else:
-			set player's flight mode to true 
-			make player fly
-			send "<#18FF00>Flightmode enabled!"
-			stop
+			else:
+				set player's flight mode to true 
+				make player fly
+				set {fly.%player%} to true
+				send "<#18FF00>Flightmode enabled!"
+				stop
