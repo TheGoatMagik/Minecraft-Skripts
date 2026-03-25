@@ -104,7 +104,7 @@ command /chatclear:
 		loop 100 times:
 			broadcast ""
 		broadcast "&8-----------------------------------------------------"
-		broadcast "<#18FF00>The Chat got cleared by <#E3D66C>%player%<#18FF00>!"
+		broadcast "<#18FF00>The Chat has been cleared by <#E3D66C>%player%<#18FF00>!"
 		broadcast "&8-----------------------------------------------------"
 
 		
