@@ -14,13 +14,13 @@ command /mute <player> [<integer>]:
 			set {mutedperma.%{_p}%} to true
 			set {ismuted.%{_p}%} to true
 			send "&8[<#F3CF00>Mutesystem&8] <#18FF00>You muted %{_p}% permanently, to unmute use '/unmute %{_p}%'!"
-			send "&8[<#F3CF00>Mutesystem&8] <#FF0000>You got muted permanently!" to {_p}
+			send "&8[<#F3CF00>Mutesystem&8] <#FF0000>You've been muted permanently!" to {_p}
 			stop
 		if {_t} is set:
 			add {_t} to {muted.%{_p}%}
 			set {ismuted.%{_p}%} to true
 			send "&8[<#F3CF00>Mutesystem&8] <#18FF00>You muted %{_p}% for %{_t}% Minutes, to unmute use '/unmute %{_p}%'!"
-			send "&8[<#F3CF00>Mutesystem&8] <#FF0000>You got muted for %{_t}% Minutes!" to {_p}
+			send "&8[<#F3CF00>Mutesystem&8] <#FF0000>You've been muted for %{_t}% Minutes!" to {_p}
 			stop
 
 #======= Automatic Mute duration decrease =======
@@ -31,7 +31,7 @@ every 1 minute:
 				remove 1 from {muted.%loop-player%}
 			if {muted.%loop-player%} < 1:
 				set {muted.%loop-player%} to 0
-				send "&8[<#F3CF00>Mutesystem&8] <#18FF00>You got unmuted!" to loop-player
+				send "&8[<#F3CF00>Mutesystem&8] <#18FF00>You've been unmuted!" to loop-player
 				set {ismuted.%loop-player%} to false
 
 #======= /unmute command =======
@@ -44,7 +44,7 @@ command /unmute <player>:
 		set {ismuted.%arg-1%} to false
 		set {muted.%arg-1%} to 0
 		set {mutedperma.%arg-1%} to false
-		send "&8[<#F3CF00>Mutesystem&8] <#18FF00>You got unmuted!" to arg-1
+		send "&8[<#F3CF00>Mutesystem&8] <#18FF00>You've been unmuted!" to arg-1
 		send "&8[<#F3CF00>Mutesystem&8] <#18FF00>You unmuted %arg-1%!"
 
 #======= Setting Variables =======
@@ -66,7 +66,7 @@ command /globalmute:
 	trigger:
 		if {muted.chat} is not true:
 			set {muted.chat} to true
-			broadcast "&8[<#F3CF00>Mutesystem&8] <#FF0000>The Chat got muted!"
+			broadcast "&8[<#F3CF00>Mutesystem&8] <#FF0000>The Chat has been muted!"
 			stop
 		else:
 			send "&8[<#F3CF00>Mutesystem&8] <#FF0000>The Chat is already muted!"
@@ -76,7 +76,7 @@ command /globalunmute:
 	trigger:
 		if {muted.chat} is true:
 			set {muted.chat} to false
-			broadcast "&8[<#F3CF00>Mutesystem&8] <#18FF00>The Chat got unmuted!"
+			broadcast "&8[<#F3CF00>Mutesystem&8] <#18FF00>The Chat has been unmuted!"
 			stop
 		else:
 			broadcast "&8[<#F3CF00>Mutesystem&8] <#FF0000>The Chat isn't muted!"
