@@ -4,13 +4,21 @@ on death:
 		set {_p} to victim
 		if attacker exists:
 			set {_k} to displayname of attacker
+			set {_tool} to tool of attacker
 		else:
 			set {_k} to "Environment"
 		set {Date} to now formatted as "dd.MM.yy"
 		set {Time} to now formatted as "HH:mm:ss"
 		set {_skull} to skull of victim
-		set name of {_skull} to "<#F3CF00>%{_p}%<#FFFFFF>'s Skull"
-		set line 1 of lore of {_skull} to "<#A7A7A7>--------------------------------------"
-		set line 2 of lore of {_skull} to "<#FFFFFF>Killed by <#F3CF00>%{_k}% <#FFFFFF>on <#F3CF00>%{Date}% <#FFFFFF>at <#F3CF00>%{Time}%"
-		set line 3 of lore of {_skull} to "<#A7A7A7>--------------------------------------"
+		set name of {_skull} to "<#F3CF00>%{_p}%<#FFFFFF>'s Head"
+		if attacker exists:
+			set line 1 of lore of {_skull} to "<#A7A7A7>--------------------------------------"
+			set line 2 of lore of {_skull} to "<#FFFFFF>Killed by <#F3CF00>%{_k}% <#FFFFFF>on <#F3CF00>%{Date}% <#FFFFFF>at <#F3CF00>%{Time}%"
+			set line 3 of lore of {_skull} to "<#FFFFFF>Killed using <#F3CF00>{_tool}"
+			set line 4 of lore of {_skull} to "<#A7A7A7>--------------------------------------"
+			stop
+		else:
+			set line 1 of lore of {_skull} to "<#A7A7A7>--------------------------------------"
+			set line 2 of lore of {_skull} to "<#FFFFFF>Killed by <#F3CF00>%{_k}% <#FFFFFF>on <#F3CF00>%{Date}% <#FFFFFF>at <#F3CF00>%{Time}%"
+			set line 3 of lore of {_skull} to "<#A7A7A7>--------------------------------------"
 		drop {_skull} at location of {_p}
