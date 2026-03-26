@@ -3,7 +3,7 @@ on death:
 	if victim is a player:
 		set {_p} to victim
 		if attacker exists:
-			set {_k} to displayname of attacker
+			set {_k} to name of attacker
 			set {_tool} to tool of attacker
 		else:
 			set {_k} to "Environment"
