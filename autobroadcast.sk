@@ -7,14 +7,14 @@ every {@broadcasttime} minutes:
 	if {autobroadcast} is not set:
 		stop
 	else:
-		broadcast "&8[<#F3CF00>Autobroadcast&8]&r%{autobroadcast}%"
+		broadcast "&8[<#F3CF00>Autobroadcast&8] &r%{autobroadcast}%"
 
 command /setautobroadcast <text>:
 	permission: autobroadcast.set
 	trigger:
 		if arg-1 is not set:
-			send "&8[<#F3CF00>Autobroadcast&8]<#FF0000>You need to name the Broadcastmessage!"
+			send "&8[<#F3CF00>Autobroadcast&8] <#FF0000>You need to name the Broadcastmessage!"
 			stop
 		set {_ab} to arg-1
 		set {autobroadcast} to colored {_ab}
-		send "&8[<#F3CF00>Autobroadcast&8]<#18FF00>Broadcasting message set succesfully!"
+		send "&8[<#F3CF00>Autobroadcast&8] <#18FF00>Broadcasting message set succesfully!"
