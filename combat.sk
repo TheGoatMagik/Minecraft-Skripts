@@ -1,0 +1,49 @@
+#Warning: This Skript is kot tested and unfinished!
+options:
+	combattime: 30
+
+on damage:
+	if victim is a player:
+		set {_v} to victim
+		set {_a} to attacker
+		if {combat.%victim%} = 0:
+			send "&cYou are in combat for %{@combattime}% seconds!" to victim
+			add victim to {combat::*}
+		if {combat.%attacker%} = 0:
+			send "&cYou are in combat for %{@combattime}% seconds!" to attacker
+			add attacker to {combat::*}
+		if {combat.%victim%} is not set:
+			send "&cYou are in combat for %{@combattime}% seconds!" to victim
+			add victim to {combat::*}
+		if {combat.%attacker%} is not set:
+			send "&cYou are in combat for %{@combattime}% seconds!" to attacker
+			add attacker to {combat::*}
+		set {combat.%victim%} to {@combattime}
+		set {combat.%attacker%} to {@combattime}
+
+every 1 second:
+	loop {combat::*}
+	remove 1 from {combat.%loop-player%}
+	if {combat.%loop-player%} > 0:
+		send actionbar "&cCombat: %{combat.%loop-player%}% seconds" to loop-player
+	if {combat.%loop-player%} = 0:
+		send "&aCombat ended!" to loop-player
+		remove loop-player from {combat::*}
+
+on quit:
+	if {combat.%player%} = 0:
+		stop
+	if {combat.%player%} is not set:
+		stop
+	if {combat.%player%} > 0:
+		kill player
+		set {combatkilled.%player%} to true
+
+on join:
+	if {combatkilled.%player%} is true:
+		send "&cYou habe been killed, because you logged out during combat!"
+		set {combatkilled.%player%} to false
+
+on death:
+	if {combat.%victim%} > 0:
+		set {combat.%victim%} to 0
