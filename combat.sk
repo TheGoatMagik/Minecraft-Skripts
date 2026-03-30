@@ -8,16 +8,16 @@ on damage:
 		set {_v} to victim
 		set {_a} to attacker
 		if {combat.%victim%} = 0:
-			send "&8[<#F3CF00>Combatsystem&8] &cYou are in combat for %{@combattime}% seconds!" to victim
+			send "&8[<#F3CF00>Combatsystem&8] <#FF0000>You are in combat for %{@combattime}% seconds!" to victim
 			add victim to {combat::*}
 		if {combat.%attacker%} = 0:
-			send "&8[<#F3CF00>Combatsystem&8] &cYou are in combat for %{@combattime}% seconds!" to attacker
+			send "&8[<#F3CF00>Combatsystem&8] <#FF0000>You are in combat for %{@combattime}% seconds!" to attacker
 			add attacker to {combat::*}
 		if {combat.%victim%} is not set:
-			send "&8[<#F3CF00>Combatsystem&8] &cYou are in combat for %{@combattime}% seconds!" to victim
+			send "&8[<#F3CF00>Combatsystem&8] <#FF0000>You are in combat for %{@combattime}% seconds!" to victim
 			add victim to {combat::*}
 		if {combat.%attacker%} is not set:
-			send "&8[<#F3CF00>Combatsystem&8] &cYou are in combat for %{@combattime}% seconds!" to attacker
+			send "&8[<#F3CF00>Combatsystem&8] <#FF0000>You are in combat for %{@combattime}% seconds!" to attacker
 			add attacker to {combat::*}
 		set {combat.%victim%} to {@combattime}
 		set {combat.%attacker%} to {@combattime}
@@ -27,9 +27,9 @@ every 1 second:
 	loop {combat::*}
 	remove 1 from {combat.%loop-player%}
 	if {combat.%loop-player%} > 0:
-		send actionbar "&8[<#F3CF00>Combatsystem&8] &cCombat: %{combat.%loop-player%}% seconds" to loop-player
+		send actionbar "&8[<#F3CF00>Combatsystem&8] <#FF0000>Combat: %{combat.%loop-player%}% seconds" to loop-player
 	if {combat.%loop-player%} = 0:
-		send "&8[<#F3CF00>Combatsystem&8] &aCombat ended!" to loop-player
+		send "&8[<#F3CF00>Combatsystem&8] <#18FF00>Combat ended!" to loop-player
 		remove loop-player from {combat::*}
 
 #======= Killing users that quit during combat =======
@@ -44,7 +44,7 @@ on quit:
 
 on join:
 	if {combatkilled.%player%} is true:
-		send "&8[<#F3CF00>Combatsystem&8] &cYou habe been killed, because you logged out during combat!"
+		send "&8[<#F3CF00>Combatsystem&8] <#FF0000>You habe been killed, because you logged out during combat!"
 		set {combatkilled.%player%} to false
 
 #======= Resetting on death =======
