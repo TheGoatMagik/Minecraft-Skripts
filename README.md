@@ -14,7 +14,7 @@ You can change the player permissions for every file aswell as some of the messa
 
 ## **❌ Troubleshooting:**
 
-If a script is not working for you, please check your plugins and their versions. If you are sure, that the script is the problem, please tell me. If you find Bugs, tell me and i'll try fixing them.
+If a script is not working for you, please check your plugins and their versions. If you are sure, that the script is the problem, please tell me. If you find Bugs, please let me know.
 
 ## **❗️ Important:**
 
