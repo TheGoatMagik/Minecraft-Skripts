@@ -18,7 +18,7 @@ command /tc [<text>]:
 				set {tc.%player%} to true
 				send "&8[<#F3CF00>TeamChat&8] <#18FF00>Teamchat-toggle enabled!"
 				stop
-			if {t.%player%} is not set:
+			if {tc.%player%} is not set:
 				set {tc.%player%} to true
 				send "&8[<#F3CF00>TeamChat&8] <#18FF00>Teamchat-toggle enabled!"
 				stop
